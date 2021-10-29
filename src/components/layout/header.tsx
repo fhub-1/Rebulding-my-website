@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <HStack as="nav" justifyContent="space-between" alignItems="center" py={3}>
       <Heading size="sm">Joseph Kitheka.</Heading>
-      <HStack alignItems="center" spacing={10}>
+      <HStack alignItems="center" spacing={{base: ''}}>
         <NextLink href="/talks" passHref>
           <Button
             _hover={{ textDecoration: "none" }}

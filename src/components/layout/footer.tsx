@@ -1,13 +1,15 @@
 import { useRouter } from "next/router";
 import NextLink from "next/link";
-import { VStack, Divider, Link, SimpleGrid } from "@chakra-ui/react";
+import { VStack, Divider, Link, Stack } from "@chakra-ui/react";
 import {
   TWITTER_PROFILE,
   GITHUB_PROFILE,
   YOUTUBE_CHANNEL,
-  POLYWORK_PROFILE,
+  FACEBOOK_GROUP,
   TWITCH_CHANNEL
 } from "../../constants";
+import { SubscribeForm } from "./SubscribeForm";
+import { LinkGrid } from "./LinkGrid";
 
 const firstGroup = [
   {
@@ -29,24 +31,43 @@ const firstGroup = [
 ];
 const secondGroup = [
   {
-    href: "/",
+    href: TWITTER_PROFILE,
     label: "Twitter"
   },
   {
-    href: "/",
+    href: GITHUB_PROFILE,
     label: "GitHub"
   },
   {
-    href: "/",
+    href: YOUTUBE_CHANNEL,
     label: "Youtube"
   },
   {
-    href: "/talks",
-    label: "Polywork"
+    href: FACEBOOK_GROUP,
+    label: "Facebook"
   },
   {
-    href: "/talks",
+    href: TWITCH_CHANNEL,
     label: "Twitch"
+  }
+];
+
+const thridGroup = [
+  {
+    href: "/uses",
+    label: "Uses"
+  },
+  {
+    href: "/gear",
+    label: "Gear"
+  },
+  {
+    href: "/bookmarks",
+    label: "Bookmarks"
+  },
+  {
+    href: "/books",
+    label: "Books"
   }
 ];
 
@@ -56,7 +77,12 @@ const Footer = () => {
   return (
     <VStack pb={8} spacing={8}>
       <Divider />
-      <SimpleGrid columns={{ base: 1, md: 3 }} w="full">
+      <Stack
+        direction={{ base: "column", md: "row" }}
+        justifyContent="space-between"
+        w="full"
+        spacing={8}
+      >
         <VStack alignItems="flex-start" textDecoration="none">
           {firstGroup.map(({ href, label }) => (
             <NextLink key={href} href={href} passHref>
@@ -66,7 +92,25 @@ const Footer = () => {
             </NextLink>
           ))}
         </VStack>
-      </SimpleGrid>
+        <VStack alignItems="flex-start" textDecoration="none">
+          {secondGroup.map(({ href, label }) => (
+            <NextLink key={href} href={href} passHref>
+              <Link isExternal target="_blank" color="gray.700">
+                {label}
+              </Link>
+            </NextLink>
+          ))}
+        </VStack>
+        <VStack alignItems="flex-start" textDecoration="none">
+          {thridGroup.map(({ href, label }) => (
+            <NextLink key={href} href={href} passHref>
+              <Link isExternal target="_blank" color="gray.700">
+                {label}
+              </Link>
+            </NextLink>
+          ))}
+        </VStack>
+      </Stack>
     </VStack>
   );
 };
