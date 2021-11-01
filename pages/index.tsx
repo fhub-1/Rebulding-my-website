@@ -24,8 +24,11 @@ const IndexPage = () => (
           />
         </HStack>
         <Text>
-          I'm a Self-Taught-Developer that loves building products and web
-          applications that impact millions of lives. Currently working on
+          I'm a <strong>Self-Taught-Developer</strong> that loves building
+          products and web applications that impact{" "}
+          <strong>millions of lives</strong>. Currently working on{" "}
+          <strong>Hack the coding has Team leader</strong>.I'm also a{" "}
+          <strong>Youtube Content Creator</strong>
         </Text>
       </VStack>
     </Stack>
