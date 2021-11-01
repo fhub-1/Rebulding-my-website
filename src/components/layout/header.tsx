@@ -13,8 +13,12 @@ const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <HStack as="nav" justifyContent="space-between" alignItems="center" py={3}>
-      <Heading size="sm">Joseph Kitheka.</Heading>
-      <HStack alignItems="center" spacing={{base: ''}}>
+      <NextLink href="/" passHref>
+        <Link>
+          <Heading size="sm">Joseph Kitheka.</Heading>
+        </Link>
+      </NextLink>
+      <HStack alignItems="center" spacing={{ base: "" }}>
         <NextLink href="/talks" passHref>
           <Button
             _hover={{ textDecoration: "none" }}

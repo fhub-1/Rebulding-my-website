@@ -8,8 +8,6 @@ import {
   FACEBOOK_GROUP,
   TWITCH_CHANNEL
 } from "../../constants";
-import { SubscribeForm } from "./SubscribeForm";
-import { LinkGrid } from "./LinkGrid";
 
 const firstGroup = [
   {
@@ -68,6 +66,10 @@ const thridGroup = [
   {
     href: "/books",
     label: "Books"
+  },
+  {
+    href: "/Privacy",
+    label: "Privacy Pollicy"
   }
 ];
 
