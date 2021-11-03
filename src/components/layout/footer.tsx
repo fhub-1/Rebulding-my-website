@@ -8,8 +8,9 @@ import {
   FACEBOOK_GROUP,
   TWITCH_CHANNEL
 } from "../../constants";
+import { Link as LinkType } from "types/link";
 
-const firstGroup = [
+const firstGroup: LinkType[] = [
   {
     href: "/",
     label: "Home"

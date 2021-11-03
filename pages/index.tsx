@@ -5,13 +5,41 @@ import {
   Heading,
   IconButton,
   Icon,
-  Text
+  Text,
+  Link,
+  Button
 } from "@chakra-ui/react";
+import { FiArrowUpRight } from "react-icons/fi";
+
 import { HiPlay, HiPause } from "react-icons/hi";
+import ExternalLink from "../src/components/external-link";
+import { Link as LinkType } from "types/link";
+import { TWITCH_CHANNEL, FACEBOOK_GROUP, DISCORD_SERVER } from "src/constants";
+import HeroImage from "../src/components/hero-image";
+
+type SocialLink = LinkType & { color: string };
+
+const socialLinks: SocialLink[] = [
+  {
+    href: TWITCH_CHANNEL,
+    label: "TWITCH_CHANNEL",
+    color: "twitch"
+  },
+  {
+    href: FACEBOOK_GROUP,
+    label: "FacebookGroup",
+    color: "blue.700"
+  },
+  {
+    href: DISCORD_SERVER,
+    label: "Discord_Server",
+    color: "purple.700"
+  }
+];
 
 const IndexPage = () => (
   <VStack spacing={20}>
-    <Stack>
+    <Stack spacing={12} direction={{ base: "column-reverse", md: "row" }}>
       <VStack spacing={3} alignItems="flex-start">
         <HStack spacing={3}>
           <Heading size="lg">Hi, I'm Joseph Kitheka.</Heading>
@@ -23,14 +51,45 @@ const IndexPage = () => (
             rounded="full"
           />
         </HStack>
-        <Text>
-          I'm a <strong>Self-Taught-Developer</strong> that loves building
-          products and web applications that impact{" "}
+        <Text lineHeight="175%">
+          I'm a{" "}
+          <strong>
+            <ExternalLink href="https://www.linkedin.com/in/joseph-kitheka-4827a01a7/">
+              Self-Taught-Developer
+            </ExternalLink>
+          </strong>{" "}
+          that loves building products and web applications that impact{" "}
           <strong>millions of lives</strong>. Currently working on{" "}
-          <strong>Hack the coding has Team leader</strong>.I'm also a{" "}
-          <strong>Youtube Content Creator</strong>
+          <strong>
+            <ExternalLink href="https://www.facebook.com/groups/3343365749039855/">
+              {" "}
+              Hack the coding has Team leader
+            </ExternalLink>
+          </strong>
+          .I'm also a{" "}
+          <strong>
+            <ExternalLink href="https://www.youtube.com/channel/UCAOdLWYUTCgX5PjNSI2DNIg">
+              Youtube Content Creator
+            </ExternalLink>
+          </strong>
         </Text>
+        <HStack spacing={3}>
+          {socialLinks.map(({ href, label, color }) => (
+            <Button
+              key={href}
+              as={Link}
+              variant="ghost"
+              href={href}
+              targt="_blank"
+              color={color}
+              rightIcon={<Icon as={FiArrowUpRight} />}
+            >
+              {label}
+            </Button>
+          ))}
+        </HStack>
       </VStack>
+      <HeroImage />
     </Stack>
   </VStack>
 );

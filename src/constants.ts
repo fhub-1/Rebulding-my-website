@@ -5,3 +5,4 @@ export const YOUTUBE_CHANNEL =
 export const FACEBOOK_GROUP =
   "https://www.facebook.com/groups/3343365749039855/";
 export const TWITCH_CHANNEL = "https://twitch.tv/HackTheCoding";
+export const DISCORD_SERVER = "https://discord.gg/TgpvQWHE"
