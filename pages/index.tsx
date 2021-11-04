@@ -16,6 +16,7 @@ import ExternalLink from "../src/components/external-link";
 import { Link as LinkType } from "types/link";
 import { TWITCH_CHANNEL, FACEBOOK_GROUP, DISCORD_SERVER } from "src/constants";
 import HeroImage from "../src/components/hero-image";
+import HeroPlay from "@/components/hero-play";
 
 type SocialLink = LinkType & { color: string };
 
@@ -27,7 +28,7 @@ const socialLinks: SocialLink[] = [
   },
   {
     href: FACEBOOK_GROUP,
-    label: "FacebookGroup",
+    label: "Facebook_Group",
     color: "blue.700"
   },
   {
@@ -39,17 +40,15 @@ const socialLinks: SocialLink[] = [
 
 const IndexPage = () => (
   <VStack spacing={20}>
-    <Stack spacing={12} direction={{ base: "column-reverse", md: "row" }}>
+    <Stack
+      alignItems="center"
+      spacing={12}
+      direction={{ base: "column-reverse", md: "row" }}
+    >
       <VStack spacing={3} alignItems="flex-start">
         <HStack spacing={3}>
           <Heading size="lg">Hi, I'm Joseph Kitheka.</Heading>
-          <IconButton
-            aria-label="Play pronunciation track"
-            icon={<Icon color="purple.400" as={HiPlay} w={6} h={6} />}
-            variant="unstyled"
-            size="xs"
-            rounded="full"
-          />
+          <HeroPlay />
         </HStack>
         <Text lineHeight="175%">
           I'm a{" "}

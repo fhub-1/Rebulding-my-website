@@ -1,7 +1,8 @@
-import { Link, LinkProps, Icon } from "@chakra-ui/react";
+import { Link, LinkProps, Icon, useColorModeValue } from "@chakra-ui/react";
 import { FiArrowUpRight } from "react-icons/fi";
 
 const ExternalLink = ({ children, ...linkProps }: LinkProps) => {
+  const iconColor = useColorModeValue("gray.700", "white");
   return (
     <Link
       {...linkProps}
@@ -12,7 +13,7 @@ const ExternalLink = ({ children, ...linkProps }: LinkProps) => {
       target="_blank"
     >
       {children}
-      <Icon as={FiArrowUpRight} color="gray.700" display="inline" />
+      <Icon as={FiArrowUpRight} color={iconColor} display="inline" />
     </Link>
   );
 };
