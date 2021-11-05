@@ -39,13 +39,14 @@ const socialLinks: SocialLink[] = [
 ];
 
 const IndexPage = () => (
-  <VStack spacing={20}>
+  <VStack spacing={20} w="full">
     <Stack
       alignItems="center"
       spacing={12}
       direction={{ base: "column-reverse", md: "row" }}
+      w="full"
     >
-      <VStack spacing={3} alignItems="flex-start">
+      <VStack spacing={3} alignItems="flex-start" w="full">
         <HStack spacing={3}>
           <Heading size="lg">Hi, I'm Joseph Kitheka.</Heading>
           <HeroPlay />
@@ -72,7 +73,7 @@ const IndexPage = () => (
             </ExternalLink>
           </strong>
         </Text>
-        <HStack spacing={3}>
+        <Stack spacing={3} direction={{ base: "column", md: "row" }}>
           {socialLinks.map(({ href, label, color }) => (
             <Button
               key={href}
@@ -86,7 +87,7 @@ const IndexPage = () => (
               {label}
             </Button>
           ))}
-        </HStack>
+        </Stack>
       </VStack>
       <HeroImage />
     </Stack>
