@@ -3,26 +3,13 @@ import { HiPlay, HiStop } from "react-icons/hi";
 import { useAudio } from "react-use";
 
 const HeroPlay = () => {
-  const [audio, state, controls] = useAudio({
-    src: '/assets/josephkitheka.mp3',
-    autoPlay: true, // auto
+  const [audio, state, controls, ref] = useAudio({
+    src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
+    autoPlay: false,
   });
 
   const play = () => {
-    controls.play();
-  };
-
-  const stop = () => {
-    controls.pause();
-    controls.seek(0);
-  };
-
-  const toggle = () => {
-    if (state.playing) {
-      stop();
-    } else {
-      play();
-    }
+    controller.play();
   }
 
   return (
@@ -32,7 +19,7 @@ const HeroPlay = () => {
         aria-label="Play pronunciation track"
         icon={
           <Icon color="purple.500"
-            as={state.playing ? HiStop : HiPlay}
+            as={HiPlay}
             w={{ base: 12, md: 8 }}
             h={{ base: 12, md: 8 }}
           />
@@ -40,7 +27,6 @@ const HeroPlay = () => {
         variant="unstyled"
         size="xs"
         rounded="full"
-        onClick={toggle}
       />
     </>
   );

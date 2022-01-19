@@ -32,15 +32,15 @@ const HeroPlay = () => {
         aria-label="Play pronunciation track"
         icon={
           <Icon color="purple.500"
-            as={state.playing ? HiStop : HiPlay}
-            w={{ base: 12, md: 8 }}
-            h={{ base: 12, md: 8 }}
+            as={state.playing :HiPlay}
+      w={{ base: 12, md: 8 }}
+      h={{ base: 12, md: 8 }}
           />
         }
-        variant="unstyled"
-        size="xs"
-        rounded="full"
-        onClick={toggle}
+      variant="unstyled"
+      size="xs"
+      rounded="full"
+      onClick={toggle}
       />
     </>
   );

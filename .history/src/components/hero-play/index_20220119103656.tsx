@@ -4,8 +4,8 @@ import { useAudio } from "react-use";
 
 const HeroPlay = () => {
   const [audio, state, controls] = useAudio({
-    src: '/assets/josephkitheka.mp3',
-    autoPlay: true, // auto
+    src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
+    autoPlay: false,
   });
 
   const play = () => {
@@ -18,11 +18,7 @@ const HeroPlay = () => {
   };
 
   const toggle = () => {
-    if (state.playing) {
-      stop();
-    } else {
-      play();
-    }
+    if (state.pl)
   }
 
   return (
@@ -32,7 +28,7 @@ const HeroPlay = () => {
         aria-label="Play pronunciation track"
         icon={
           <Icon color="purple.500"
-            as={state.playing ? HiStop : HiPlay}
+            as={HiPlay}
             w={{ base: 12, md: 8 }}
             h={{ base: 12, md: 8 }}
           />
@@ -40,7 +36,6 @@ const HeroPlay = () => {
         variant="unstyled"
         size="xs"
         rounded="full"
-        onClick={toggle}
       />
     </>
   );

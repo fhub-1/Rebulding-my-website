@@ -7,7 +7,7 @@ import {
   Icon,
   Text,
   Link,
-  Button,
+  Button
 } from "@chakra-ui/react";
 import { FiArrowUpRight } from "react-icons/fi";
 
@@ -24,18 +24,18 @@ const socialLinks: SocialLink[] = [
   {
     href: TWITCH_CHANNEL,
     label: "TWITCH_CHANNEL",
-    color: "twitch",
+    color: "twitch"
   },
   {
     href: FACEBOOK_GROUP,
     label: "Facebook_Group",
-    color: "blue.700",
+    color: "blue.700"
   },
   {
     href: DISCORD_SERVER,
     label: "Discord_Server",
-    color: "purple.700",
-  },
+    color: "purple.700"
+  }
 ];
 
 const IndexPage = () => (
@@ -47,12 +47,7 @@ const IndexPage = () => (
       w="full"
     >
       <VStack spacing={3} alignItems="flex-start" w="full">
-        <Stack
-          spacing={3}
-          direction={{ base: "column", md: "row" }}
-          justifyContent={{ base: "center", md: "flex-start" }}
-          alignItems="center"
-        >
+        <Stack spacing={3}  direction={{base: 'column', md: 'row'}} justifyContent={{base: 'center', md:"flex-start"}} alignItems="center">
           <Heading size="lg">Hi, I'm Joseph Kitheka.</Heading>
           <HeroPlay />
         </Stack>
@@ -86,8 +81,6 @@ const IndexPage = () => (
               variant="ghost"
               href={href}
               targt="_blank"
-              px={{ base: 0, md: 4 }}
-              justifyContent={{ base: 'flex-start', md: 'center' }}
               color={color}
               rightIcon={<Icon as={FiArrowUpRight} />}
             >

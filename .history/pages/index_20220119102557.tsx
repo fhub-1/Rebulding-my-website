@@ -86,8 +86,7 @@ const IndexPage = () => (
               variant="ghost"
               href={href}
               targt="_blank"
-              px={{ base: 0, md: 4 }}
-              justifyContent={{ base: 'flex-start', md: 'center' }}
+              px={{}}
               color={color}
               rightIcon={<Icon as={FiArrowUpRight} />}
             >

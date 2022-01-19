@@ -9,7 +9,6 @@ import {
   TWITCH_CHANNEL
 } from "../../constants";
 import { Link as LinkType } from "types/link";
-import { Copyright } from "./Copyright";
 
 const firstGroup: LinkType[] = [
   {
@@ -79,7 +78,7 @@ const Footer = () => {
   const { pathname } = useRouter();
 
   return (
-    <VStack pb={8} spacing={8} >
+    <VStack pb={8} spacing={8}>
       <Divider />
       <Stack
         direction={{ base: "column", md: "row" }}
@@ -113,7 +112,6 @@ const Footer = () => {
               </Link>
             </NextLink>
           ))}
-          <Copyright alignItems="center" justifyContent="center" />
         </VStack>
       </Stack>
     </VStack>

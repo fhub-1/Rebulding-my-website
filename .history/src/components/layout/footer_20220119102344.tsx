@@ -79,7 +79,7 @@ const Footer = () => {
   const { pathname } = useRouter();
 
   return (
-    <VStack pb={8} spacing={8} >
+    <VStack pb={8} spacing={8} bg="red">
       <Divider />
       <Stack
         direction={{ base: "column", md: "row" }}

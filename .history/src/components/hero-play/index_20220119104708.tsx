@@ -4,7 +4,7 @@ import { useAudio } from "react-use";
 
 const HeroPlay = () => {
   const [audio, state, controls] = useAudio({
-    src: '/assets/josephkitheka.mp3',
+    src: '/assets/public_assets_pronunciation.mp3',
     autoPlay: true, // auto
   });
 
@@ -32,7 +32,7 @@ const HeroPlay = () => {
         aria-label="Play pronunciation track"
         icon={
           <Icon color="purple.500"
-            as={state.playing ? HiStop : HiPlay}
+            as={HiPlay}
             w={{ base: 12, md: 8 }}
             h={{ base: 12, md: 8 }}
           />
@@ -40,7 +40,7 @@ const HeroPlay = () => {
         variant="unstyled"
         size="xs"
         rounded="full"
-        onClick={toggle}
+        onChange={toggle}
       />
     </>
   );
