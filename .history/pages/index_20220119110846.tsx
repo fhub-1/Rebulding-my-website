@@ -98,8 +98,8 @@ const IndexPage = () => (
       </VStack>
       <HeroImage />
     </Stack>
-    <VStack w='full' alignItems="flex-start">
-      <Heading size='md'>Coures.</Heading>
+    <VStack>
+      <Heading size='md' alignItems="flex-start">Coures.</Heading>
     </VStack>
   </VStack>
 );

@@ -44,7 +44,6 @@ const IndexPage = () => (
       alignItems="center"
       spacing={12}
       direction={{ base: "column-reverse", md: "row" }}
-      w="full"
     >
       <VStack spacing={3} alignItems="flex-start" w="full">
         <Stack
@@ -98,9 +97,7 @@ const IndexPage = () => (
       </VStack>
       <HeroImage />
     </Stack>
-    <VStack w='full' alignItems="flex-start">
-      <Heading size='md'>Coures.</Heading>
-    </VStack>
+    <Heading size='md'>Coures.</Heading>
   </VStack>
 );
 export default IndexPage;
