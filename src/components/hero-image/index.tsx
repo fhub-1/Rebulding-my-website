@@ -1,7 +1,7 @@
 import { Box, AspectRatio } from "@chakra-ui/react";
 
 import Me from "./me.jpg";
-import Image from "@/components/image";
+import Image from "../../components/image";
 
 const HeroImage = () => {
   return (
