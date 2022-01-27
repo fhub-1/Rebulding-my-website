@@ -8,7 +8,7 @@ import {
   FACEBOOK_GROUP,
   TWITCH_CHANNEL
 } from "../../constants";
-import { Link as LinkType } from "types/link";
+import { Link as LinkType } from "../../../types/link";
 import { Copyright } from "./Copyright";
 
 const firstGroup: LinkType[] = [
