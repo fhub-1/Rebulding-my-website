@@ -10,6 +10,8 @@ import {
   Text,
   Link,
   Button,
+  List,
+  ListItem,
 } from "@chakra-ui/react";
 import { FiArrowUpRight } from "react-icons/fi";
 import ExternalLink from "../src/components/external-link";
@@ -18,6 +20,7 @@ import { TWITCH_CHANNEL, FACEBOOK_GROUP, DISCORD_SERVER } from "../src/constants
 import HeroImage from "../src/components/hero-image";
 import { Course } from "../types/Course";
 import HeroPlay from "../src/components/hero-play";
+import CourseCard from "../src/components/course-card";
 
 type SocialLink = LinkType & { color: string };
 
@@ -106,8 +109,15 @@ const IndexPage = ({ courses }: Props) => {
         </VStack>
         <HeroImage />
       </Stack>
-      <VStack w='full' alignItems="flex-start">
+      <VStack w='full' alignItems="flex-start" spacing='4'>
         <Heading size='md'>Coureses.</Heading>
+        <List spacing='6'>
+          {courses.map((course) => (
+            <ListItem key={course.url}>
+              <CourseCard {...course} />
+            </ListItem>
+          ))}
+        </List>
       </VStack>
     </VStack>
   );
